@@ -398,7 +398,7 @@
                 <a href="complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -631,7 +631,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="agregar-nuevas-tareas"><a name="agregar-nuevas-tareas" class="plugin-anchor" href="#agregar-nuevas-tareas"><i class="fa fa-link" aria-hidden="true"></i></a>Agregar nuevas tareas</h2>
-<p>El usuario agregar&#xE1; nuevas tareas con un formulario simple abajo de la lista</p>
+<p>El usuario agregar&#xE1; nuevas tareas con un simple formulario abajo de la lista</p>
 <p><img src="final-form.png" alt="Formulario final"></p>
 <p>Para agregar esta caracter&#xED;stica requieres algunos pasos:</p>
 <ul>
@@ -686,23 +686,23 @@
     <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Index&quot;</span>);
 }
 </code></pre>
-<p>&#xBF;Notas como la nueva acci&#xF3;n <code>AddItem</code> acepta un par&#xE1;metro <code>TodoItem</code>? Es es el mismo modelo <code>TodoItem</code> que creaste en el capitulo <em>Fundamentos de MVC</em> para guardar la informaci&#xF3;n acerca de la tarea. Cuando es usado aque como un par&#xE1;metro de acci&#xF3;n, ASP.NET Core autom&#xE1;ticamente ejecuta un proceso llamado <strong>model binding</strong>.</p>
+<p>&#xBF;Notas como la nueva acci&#xF3;n <code>AddItem</code> acepta un par&#xE1;metro <code>TodoItem</code>? Es es el mismo modelo <code>TodoItem</code> que creaste en el cap&#xED;tulo <em>Fundamentos de MVC</em> para guardar la informaci&#xF3;n acerca de la tarea. Cuando es usado aque como un par&#xE1;metro de acci&#xF3;n, ASP.NET Core autom&#xE1;ticamente ejecuta un proceso llamado <strong>model binding</strong>.</p>
 <p>Model binding busca en los datos de la solicitud e intente inteligentemente coincidir los datos con las propiedad del modelo. En otras palabras, cuando el usuario env&#xED;a el formulario y su navegador POST hacia esta acci&#xF3;n, ASP.NET Core obtendr&#xE1; esta informaci&#xF3;n desde el formulario y la colocara en la variable <code>newItem</code>.</p>
-<p>El atributo <code>[ValidateAntiForgeryToken]</code> antes de la acci&#xF3;n le dice a ASP.NET Core que est debe buscar (y verificar) el c&#xF3;digo oculto de verificaci&#xF3;n qu fue agregado al formulario por el tag helper <code>asp-action</code>. Este es una importante medida de seguridad para prevenir ataques de solicitudes de sitio cruzados. donde tus usuario no puedes ser enga&#xF1;ados enviando los datos del formulario a sitios maliciosos. El c&#xF3;digo de verificaci&#xF3;n se asegura que la aplicaci&#xF3;n es actualmente la &#xFA;nica que muestra el formulario y recibe los datos del formulario.</p>
-<p>Echa un vistazo <code>AddItemPartial.cshtml</code> a la vista una vez m&#xE1;s. La linea <code>@model TodoItem</code> al principio del archivo le dice a ASP.NET Core que la vista debe esperar ser pareada con el modelo <code>TodoItem</code>. Esto hace posible  usar <code>asp-for=&quot;Title&quot;</code> en la etiqueta <code>&lt;input&gt;</code> para dejar ASP.NET Core conozca que esta elemento input es para la propiedad <code>Title</code>.</p>
-<p>Porque la l&#xED;nea <code>@model</code>, la vista parcial espeta recibir un objecto <code>TodoItem</code> cuando es generada. Pasando a esta un <code>new TodoItem</code> a trav&#xE9;s  <code>Html.PartialAsync</code> inicializa el formulario con una tarea en blanco.(Intenta a&#xF1;adir <code>{ Title = &quot;hello&quot; }</code>  y ve que pasa!)</p>
-<p>Durante el model binding, cualquier propiedad del model que no pueden se coincidente con los campos en la solicitud. Desde que el formulario  solo incluye un elemento input <code>Title</code>, puede espera que las otras propiedades en <code>TodoItem</code> (la bandera <code>IsDone</code>, la fecha de <code>DueAt</code>  ) ser&#xE1;n vac&#xED;as o contienes valores default.</p>
+<p>El atributo <code>[ValidateAntiForgeryToken]</code> antes de la acci&#xF3;n le dice a ASP.NET Core que est debe buscar (y verificar) el c&#xF3;digo oculto de verificaci&#xF3;n qu fue agregado al formulario por el tag helper <code>asp-action</code>. Este es una importante medida de seguridad para prevenir falsificaci&#xF3;n de petici&#xF3;n en sitios cruzados. donde tus usuario no puedes ser enga&#xF1;ados enviando los datos del formulario a sitios maliciosos. El c&#xF3;digo de verificaci&#xF3;n se asegura que la aplicaci&#xF3;n es actualmente la &#xFA;nica que muestra el formulario y recibe los datos del formulario.</p>
+<p>Echa un vistazo <code>AddItemPartial.cshtml</code> a la vista una vez m&#xE1;s. La linea <code>@model TodoItem</code> al principio del archivo le dice a ASP.NET Core que la vista debe esperar ser pareada con el modelo <code>TodoItem</code>. Esto hace posible usar <code>asp-for=&quot;Title&quot;</code> en la etiqueta <code>&lt;input&gt;</code> para dejar ASP.NET Core conozca que esta elemento input es para la propiedad <code>Title</code>.</p>
+<p>Porque la l&#xED;nea <code>@model</code>, la vista parcial espeta recibir un objecto <code>TodoItem</code> cuando es generada. Pasando a esta un <code>new TodoItem</code> a trav&#xE9;s <code>Html.PartialAsync</code> inicializa el formulario con una tarea en blanco.(Intenta a&#xF1;adir <code>{ Title = &quot;hello&quot; }</code> y ve que pasa!)</p>
+<p>Durante el model binding, cualquier propiedad del model que no pueden se coincidente con los campos en la solicitud. Desde que el formulario solo incluye un elemento input <code>Title</code>, puede espera que las otras propiedades en <code>TodoItem</code> (la bandera <code>IsDone</code>, la fecha de <code>DueAt</code>) ser&#xE1;n vac&#xED;as o contienes valores predefinidos.</p>
 <blockquote>
 <p>En lugar de reutilizar el modelo <code>TodoItem</code>, otra aproximaci&#xF3;n seria crear un modelo separado (como <code>NewTodoItem</code> ) que solo es usado para esta acci&#xF3;n y solo tiene las propiedades espec&#xED;ficas (Titulo) que necesitas para agregar una nueva tarea. Enlazamiento de modelo es aun usar, pero de esta forma haz separado el modelo que es usado para guardar una tarea en la base de datos desde el modelo que es usado para enlazar la solicitud de entrada. Es a veces llamado un <strong>binding model</strong> or a <strong>data transfer object</strong></p>
 </blockquote>
 <p>Despu&#xE9;s de enlazar los dato de la solicitud al modelo, ASP.NET Core tambi&#xE9;n ejecuta <strong>validaci&#xF3;n del modelo</strong>. La validaci&#xF3;n verifica si los datos en el modelo desde la solicitud de entrada hacen sentidos o es validad. Tu puedes agregar atributos a el modelo para decirle ASP.NET Core como debe ser validado.</p>
-<p>El atributo  <code>[Required]</code> en el titulo le dice al validador del modelo de ASP.NET Core considera el titulo incalido si no esta o es blanco. Dale un vistazo al c&#xF3;digo de la acci&#xF3;n  <code>AddItem</code>: el primer bloque checa si el <code>ModelState</code>es valido.(el resultado de la validaci&#xF3;n del modelo). Es opcional hacer esta verificaci&#xF3;n de validaci&#xF3;n justo en el principio de la acci&#xF3;n:  </p>
+<p>El atributo <code>[Required]</code> en el titulo le dice al validador del modelo de ASP.NET Core considera el titulo invalido si no esta o esta en blanco. Dale un vistazo al c&#xF3;digo de la acci&#xF3;n <code>AddItem</code>: el primer bloque checa si el <code>ModelState</code>es valido.(el resultado de la validaci&#xF3;n del modelo). Es opcional hacer esta verificaci&#xF3;n de validaci&#xF3;n justo en el principio de la acci&#xF3;n:</p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">if</span> (!ModelState.IsValid)
 {
     <span class="hljs-keyword">return</span> RedirectToAction(<span class="hljs-string">&quot;Index&quot;</span>);
 }
 </code></pre>
-<p>Si el es invalido por cualquier raz&#xF3;n, el navegador ser&#xE1; redireccionado a la ruta  <code>/Todo/Index</code>, la cual refresca la p&#xE1;gina.</p>
+<p>Si el <code>ModelState</code> es invalido por cualquier raz&#xF3;n, el navegador ser&#xE1; redireccionado a la ruta <code>/Todo/Index</code>, la cual refresca la p&#xE1;gina.</p>
 <p>Despu&#xE9;s, el controlador llama a la capa de servicio para realizar la operaci&#xF3;n de base de datos actual de guardar la nueva tarea:</p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">var</span> successful = <span class="hljs-keyword">await</span> _todoItemService.AddItemAsync(newItem);
 <span class="hljs-keyword">if</span> (!successful)
@@ -714,7 +714,7 @@
 <p>Finalmente, si todo es completado sin errores, la acci&#xF3;n redirige el navegador a la ruta <code>/Todo/Index</code>, la cual refresca la p&#xE1;gina y muestra la nueva, actualizar la listas de tareas de cada usuario.</p>
 <h3 id="agregar-un-m&#xE9;todo-de-servicio"><a name="agregar-un-m&#xE9;todo-de-servicio" class="plugin-anchor" href="#agregar-un-m&#xE9;todo-de-servicio"><i class="fa fa-link" aria-hidden="true"></i></a>Agregar un m&#xE9;todo de servicio</h3>
 <p>Si estas usando un editor de c&#xF3;digo que entiende C#, veras unas l&#xED;neas en rojas bajo <code>AddItemAsync</code> debido a que el m&#xE9;todo no existe aun.</p>
-<p>Como ultimo paso, necesitas agregar un m&#xE9;todo a la capa de servicio. Primero agregalo a la definici&#xF3;n de la interfaz en en <code>ITodoItemService</code>:</p>
+<p>Como ultimo paso, necesitas agregar un m&#xE9;todo a la capa de servicio. Primero agregalo a la definici&#xF3;n de la interfaz en <code>ITodoItemService</code>:</p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">ITodoItemService</span>
 {
     Task&lt;TodoItem[]&gt; GetIncompleteItemsAsync();
@@ -722,7 +722,7 @@
     <span class="hljs-function">Task&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">AddItemAsync</span>(<span class="hljs-params">TodoItem newItem</span>)</span>;
 }
 </code></pre>
-<p>Entonces, la implementaci&#xF3;n actual en <code>TodoItemService</code>:</p>
+<p>Despues, la implementaci&#xF3;n actual en <code>TodoItemService</code>:</p>
 <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">AddItemAsync</span>(<span class="hljs-params">TodoItem newItem</span>)
 </span>{
     newItem.Id = Guid.NewGuid();
@@ -735,7 +735,7 @@
     <span class="hljs-keyword">return</span> saveResult == <span class="hljs-number">1</span>;
 }
 </code></pre>
-<p>La propiedad <code>newItem.Title</code> ya ha sido configurada por el enlazador de modelos de ASP.NET Core, asi este m&#xE9;todo solo necesita asignar un ID y confiar el valor por default  para las otras propiedades. Entonces, al nueva tarea es agregadas al contacto de base de datos. Esta no guardad hasta que llamas al m&#xE9;todos <code>SaveChangesAsync()</code>. Si el operaci&#xF3;n de guardar fue satisfactorio <code>SaveChangesAsync()</code> regresar&#xE1; 1.</p>
+<p>La propiedad <code>newItem.Title</code> ya ha sido configurada por el enlazador de modelos de ASP.NET Core, asi este m&#xE9;todo solo necesita asignar un Id y confiar el valor por omisi&#xF3;n para las otras propiedades. Entonces, la nueva tarea es agregadas al contacto de base de datos. Esta no se guarda hasta que llamas al m&#xE9;todo <code>SaveChangesAsync()</code>. Si el operaci&#xF3;n de guardar fue satisfactorio <code>SaveChangesAsync()</code> regresar&#xE1; 1.</p>
 <h3 id="pruebal&#xF3;"><a name="pruebal&#xF3;" class="plugin-anchor" href="#pruebal&#xF3;"><i class="fa fa-link" aria-hidden="true"></i></a>Pruebal&#xF3;</h3>
 <p>Ejecuta la aplicaci&#xF3;n y agrega algunas tareas a tu lista mediante el formulario. Debido a que las tareas son almacenadas en la base de datos, estas estar&#xE1;n ah&#xED; incluso despu&#xE9;s de detener e iniciar la aplicaci&#xF3;n otra vez.</p>
 <blockquote>
@@ -773,7 +773,7 @@
                 </a>
                 
                 
-                <a href="complete-with-checkbox.html" class="navigation navigation-next " aria-label="Next page: Actividades completadas con listas de verificación">
+                <a href="complete-with-checkbox.html" class="navigation navigation-next " aria-label="Next page: Completar las tareas con una casilla de verificación">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -784,7 +784,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Agregar nuevas tareas","level":"1.6.1","depth":2,"next":{"title":"Actividades completadas con listas de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]},"previous":{"title":"Agregando más características","level":"1.6","depth":1,"path":"chapters/add-more-features/README.md","ref":"chapters/add-more-features/README.md","articles":[{"title":"Agregar nuevas tareas","level":"1.6.1","depth":2,"path":"chapters/add-more-features/add-todo-items.md","ref":"chapters/add-more-features/add-todo-items.md","articles":[]},{"title":"Actividades completadas con listas de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/add-more-features/add-todo-items.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Agregar nuevas tareas","level":"1.6.1","depth":2,"next":{"title":"Completar las tareas con una casilla de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]},"previous":{"title":"Agregando más características","level":"1.6","depth":1,"path":"chapters/add-more-features/README.md","ref":"chapters/add-more-features/README.md","articles":[{"title":"Agregar nuevas tareas","level":"1.6.1","depth":2,"path":"chapters/add-more-features/add-todo-items.md","ref":"chapters/add-more-features/add-todo-items.md","articles":[]},{"title":"Completar las tareas con una casilla de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/add-more-features/add-todo-items.md","mtime":"2019-03-15T21:50:04.031Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -799,10 +799,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

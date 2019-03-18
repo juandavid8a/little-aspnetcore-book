@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -631,7 +631,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="crear-modelos"><a name="crear-modelos" class="plugin-anchor" href="#crear-modelos"><i class="fa fa-link" aria-hidden="true"></i></a>Crear modelos</h1>
-<p>Hay dos clases modelo diferentes que necesitan ser creadas: un modelo que representa las tareas almacenadas en la base de datos (a veces llamadas <strong>entidades</strong>), y el modelo que ser&#xE1; combinado con la vista (<strong>MV</strong> en MVC) y sera enviado al navegador del usuario. Debido a con ambos son referidos como modelos, prefiero referirme al ultimo como <strong>View Model</strong>.</p>
+<p>Hay dos clases modelo diferentes que necesitan ser creadas: un modelo que representa las tareas almacenadas en la base de datos (a veces llamadas <strong>entidades</strong>) y el modelo que ser&#xE1; combinado con la vista (<strong>MV</strong> en MVC) y sera enviado al navegador del usuario. Debido a que ambos son referidos como modelos, prefiero referirme al &#xFA;ltimo como <strong>View Model</strong>.</p>
 <p>Primero, crea un clase llamada <code>TodoItem</code> en la carpeta Models:</p>
 <p><strong>Models/TodoItem.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
@@ -652,25 +652,25 @@
     }
 }
 </code></pre>
-<p>Esta clase define lo que base de datos necesitara para almacenar cada tarea :Un ID , un titulo o nombre,si la tarea esta completada y la fecha de termino. Cada linea define una propiedad de la clase:</p>
+<p>Esta clase define lo que base de datos necesitara para almacenar cada tarea :Un ID, un titulo o nombre, si la tarea esta completada y la fecha de termino. Cada linea define una propiedad de la clase:</p>
 <ul>
-<li><p>La propiedad Id es un GUID o a Identificador Global &#xDA;nico. Los Guid son cadenas largas de letras y n&#xFA;meros como , &quot;&quot;: Por esto GUIDs son aleatorios y son extremadamente improbables que sean duplicados, son utilizas con identificadores &#xFA;nicos , Tambi&#xE9;n puede usar un n&#xFA;mero (entero como un identidad de la base de datos) pero tienes que configurar tu base de datos para siempre incremente el numero cuando un nuevas filas son a&#xF1;adidas a la base ded ato. GIod son generado de forma aleatoria , asi no tienes que preocuparte oir auto incrementarlas.</p>
+<li><p>La propiedad <strong>Id</strong> es un GUID o un Identificador Global &#xDA;nico. Los Guid son cadenas largas de letras y n&#xFA;meros como por ejemplo, <code>43ec09f2-7f70-4f4b-9559-65011d5781bb</code>. Debido a que los GUIDs son aleatorios y extremadamente improbables que sean repitan, son utilizados frecuentemente con identificadores &#xFA;nicos. Tambi&#xE9;n puede usar un n&#xFA;mero (entero) como un identificador pero tienes que configurar t&#xFA; base de datos para que siempre incremente el n&#xFA;mero cuando un nuevas filas son a&#xF1;adidas a la base de datos. Los Id son generados de forma aleatoria, as&#xED; que no tienes que preocuparte de generarlos.</p>
 </li>
-<li><p>La propiedad <strong>IsDone</strong> es un booleano ( valores true/false ), Por default, es sera falso para todos los nuevos elementos. Despu&#xE9;s escribir&#xE1;s c&#xF3;digo para cambiar esta propiedad a true cuando el usuario presiona una casilla de verificaci&#xF3;n en la visa.</p>
+<li><p>La propiedad <strong>IsDone</strong> es un booleano ( valores true/false ), De forma predeterminada, sera falso para todos los nuevos elementos. Despu&#xE9;s escribir&#xE1;s c&#xF3;digo para cambiar esta propiedad a true cuando el usuario presiona una casilla de verificaci&#xF3;n en la vista.</p>
 </li>
-<li><p>La propiedad <strong>Title</strong> es una cadena (valor texto). Esta mantendr&#xE1; el nombre o descripci&#xF3;n de la tarea pendiente. El atributo [Required] le dice ASP.NET Core que esta cadena no puede ser nula o vaci&#xE1;.</p>
+<li><p>La propiedad <strong>Title</strong> es una cadena (valor texto). Esta mantendr&#xE1; el nombre o descripci&#xF3;n de la tarea pendiente. El atributo <code>[Required]</code> le dice ASP.NET Core que esta cadena no puede ser nula o vaci&#xE1;.</p>
 </li>
-<li><p>La propiedad <strong>DueAt</strong> es un <code>DateTimeOffset</code> , el cual es un tipo de C# que almacena un fecha/hora con la diferencia de horario con el UTC. Guardar la fecha , la hora y la zona horaria juntas hace f&#xE1;cil visualizar las fechas precisamente en sistemas en diferentes zonas horarios.</p>
+<li><p>La propiedad <strong>DueAt</strong> es un <code>DateTimeOffset</code>, el cual es un tipo de C# que almacena un fecha/hora con la diferencia de horario con el UTC. Guardar la fecha, la hora y la zona horaria juntas hace f&#xE1;cil visualizar las fechas precisamente en sistemas en diferentes zonas horarios.</p>
 </li>
 </ul>
-<p>Nota que el s&#xED;mbolo de interrogaci&#xF3;n <code>?</code> despu&#xE9;s del tipo <code>DateTimeOffset?</code> este marca que la propiedad DueAt es nullable o opcional. Si el <code>?</code> no se incluye , todos los las tareas pendientes necesitar&#xED;an una fecha de entrega. Las propiedad ID y IsDone no son marcadas como nullables, asi que ellas son requeridas y siempre tendr&#xE1; un valor (o valor por omisi&#xF3;n).</p>
+<p>Nota que el s&#xED;mbolo de interrogaci&#xF3;n <code>?</code> despu&#xE9;s del tipo <code>DateTimeOffset?</code> este marca que la propiedad DueAt es nullable u opcional. Si el <code>?</code> no se incluye, todos los las tareas pendientes necesitar&#xED;an una fecha de entrega. Las propiedad ID y IsDone no son marcadas como nullables, asi que ellas son requeridas y siempre tendr&#xE1; un valor (o valor por omisi&#xF3;n).</p>
 <blockquote>
 <p>La cadenas en C# son siempre nullables, as&#xED; que no es necesario marcar el titulo como nullable: Las cadenas de C# pueden ser nulas, vac&#xED;os o contener texto.</p>
 </blockquote>
-<p>Cada propiedad es seguida por <code>get; set;</code> , las cuales es una forma corta de decir que la propiedad es de lectura/escritura (m&#xE1;s t&#xE9;cnicamente que tiene m&#xE9;todos modificadores.)</p>
-<p>En este punto, no importa a cual es la base de datos utilizada. Podr&#xED;a ser SQL Server, MySQL, Mongo Db, Redis o algo mas ex&#xF3;tico. Este modelo define como lucir&#xE1; en C# una fila o entrada en la base de datos asi no tienes que preocuparte acerca de los detalles sobre la base de datos en el c&#xF3;digo de t&#xFA; aplicaci&#xF3;n. Este simple estilo de modelo es algunas veces llamado a POCO (Plain Old C# Object por sus siglas en ingles).</p>
+<p>Cada propiedad es seguida por <code>get; set;</code>, las cuales es una forma corta de decir que la propiedad es de lectura/escritura (m&#xE1;s t&#xE9;cnicamente que tiene m&#xE9;todos modificadores.)</p>
+<p>En este punto, no importa a cual es la base de datos utilizada. Podr&#xED;a ser SQL Server, MySQL, Mongo Db, Redis o algo m&#xE1;s ex&#xF3;tico. Este modelo define como lucir&#xE1; en C# una fila o entrada en la base de datos as&#xED; no tienes que preocuparte acerca de los detalles sobre la base de datos en el c&#xF3;digo de t&#xFA; aplicaci&#xF3;n. Este simple estilo de modelo es algunas veces llamado a POCO (Plain Old C# Object por sus siglas en ingles).</p>
 <h2 id="la-vista-modelo"><a name="la-vista-modelo" class="plugin-anchor" href="#la-vista-modelo"><i class="fa fa-link" aria-hidden="true"></i></a>La vista modelo</h2>
-<p>Frecuentemente, el modelo que almacenas en la base de datos es similar pero no exactamente el mismo que deseas usar en la MVC (la vista modelo). En este caso, el modelo <code>TodoItem</code> representa a un &#xFA;nico elemento de la base de datos. Pero la vista puede necesitar mostrar dos, diez o cientos tareas pendientes (dependiendo que tal malamente el usuario esta procrastinando).</p>
+<p>Frecuentemente, el modelo que almacenas en la base de datos es similar pero no exactamente el mismo que deseas usar en la MVC (la vista modelo). En este caso, el modelo <code>TodoItem</code> representa a un &#xFA;nico elemento de la base de datos. Pero la vista puede necesitar mostrar dos o cientos tareas pendientes (dependiendo que tal malamente el usuario esta procrastinando).</p>
 <p>Debido a esto, la vista modelo puede ser una clase separada que mantienen un arreglo de <code>TodoItem</code></p>
 <p><strong>Models/TodoViewModel.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">AspNetCoreTodo.Models</span>
@@ -725,7 +725,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Crear modelos","level":"1.3.2","depth":2,"next":{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},"previous":{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-models.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Crear modelos","level":"1.3.2","depth":2,"next":{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},"previous":{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-models.md","mtime":"2019-03-15T21:44:43.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -740,10 +740,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

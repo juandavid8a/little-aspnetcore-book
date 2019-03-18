@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -643,7 +643,7 @@
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> IActionResult <span class="hljs-title">Index</span>(<span class="hljs-params"></span>)
     </span>{
-        <span class="hljs-comment">// Obtenet los articulos de la base de datos</span>
+        <span class="hljs-comment">// Obtener las tareas desde la base de datos</span>
 
         <span class="hljs-comment">// Coloca los elemento dentro de un modelo</span>
 
@@ -651,13 +651,13 @@
     }
 }
 </code></pre>
-<p>Debido a que <code>ITodoItemService</code> esta el el espacio de nombres &quot;Services&quot; , necesitaras agregar la instrucci&#xF3;n using al principio del archivo:</p>
+<p>Debido a que <code>ITodoItemService</code> esta el el espacio de nombres &quot;Services&quot;, necesitaras agregar la instrucci&#xF3;n using al principio del archivo:</p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> AspNetCoreTodo.Services;
 </code></pre>
-<p>La primera linea de la clase declara un campo privado para tener una referencia al <code>IDtoSitenService</code>. Esta variable te deja usar el servicio desde el m&#xE9;todo de acci&#xF3;n Index despu&#xE9;s (ver&#xE1;s como hacerlo en un minuto).</p>
-<p>La l&#xED;nea <code>public TodoController(ITodoItemService todoItemService)</code> define un constructor para la clase . El constructor es un m&#xE9;todo especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase <code>TodoController</code>). Por haber agregado un par&#xE1;metro <code>ITodoItemService</code> al constructor, haz declarado que para crear <code>TodoController</code> necesitar proveer un objeto que implementa la interfaz <code>ITodoItemService</code>.</p>
+<p>La primera linea de la clase declara un campo privado para tener una referencia al <code>ITodoItemService</code>. Esta variable te deja usar el servicio desde el m&#xE9;todo de acci&#xF3;n Index despu&#xE9;s (ver&#xE1;s como hacerlo en un minuto).</p>
+<p>La l&#xED;nea <code>public TodoController(ITodoItemService todoItemService)</code> define un constructor para la clase. El constructor es un m&#xE9;todo especial que es invocado cada que deseas crear una nueva instancia de la clase (en este caso la clase <code>TodoController</code>). Por haber agregado un par&#xE1;metro <code>ITodoItemService</code> al constructor, haz declarado que para crear <code>TodoController</code> necesitar proveer un objeto que implementa la interfaz <code>ITodoItemService</code>.</p>
 <blockquote>
-<p>Las interfaces son incre&#xED;bles ya que ayudan a desacoplar (separar) la l&#xF3;gica de tu aplicaci&#xF3;n. Debido a que el controlador depende de la interfaz <code>ITodoItemService</code>, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto har&#xE1; realmente f&#xE1;cil probar parte de la aplicaci&#xF3;n separadamente, Cubrir&#xE9; la pruebas en detalle en el capitulo <em>Pruebas autom&#xE1;ticas</em>.</p>
+<p>Las interfaces son incre&#xED;bles ya que ayudan a desacoplar (separar) la l&#xF3;gica de tu aplicaci&#xF3;n. Debido a que el controlador depende de la interfaz <code>ITodoItemService</code>, y no de una clase especifica este no conoce o le importa cual clase es actualmente dada. Esto har&#xE1; realmente f&#xE1;cil probar parte de la aplicaci&#xF3;n separadamente, Cubrir&#xE9; la pruebas en detalle en el cap&#xED;tulo <em>Pruebas autom&#xE1;ticas</em>.</p>
 </blockquote>
 <p>Finalmente ahora puedes usar el <code>ITodoItemService</code> (a trav&#xE9;s de la variable privada que declaraste) en tu m&#xE9;todos de acci&#xF3;n para obtener los elemento desde la capa de servicio:</p>
 <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> IActionResult <span class="hljs-title">Index</span>(<span class="hljs-params"></span>)
@@ -667,25 +667,25 @@
     <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>&#xBF; Recuerdas que el m&#xE9;todo <code>GetIncompleteItemsAsync</code> regresa un <code>Task&lt;TodoItem[]&gt;</code>? Regresar un <code>Task</code> significa que el m&#xE9;todo no necesariamente tendr&#xE1; un resultado , pero puedes usar la palabra clave <code>await</code> para asegurarte que tu c&#xF3;digo espera hasta que el resultado esta listo antes de continuar. </p>
-<p>El patr&#xF3;n de Task es com&#xFA;n cuando tu c&#xF3;digo realiza llamada a la base de datos o una API de servicio, porque no sara capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript o otro lenguaje, <code>Task</code>es la misma idea: la promesa que habr&#xE1; un resultado  - en alg&#xFA;n tiempo futuro.</p>
+<p>&#xBF; Recuerdas que el m&#xE9;todo <code>GetIncompleteItemsAsync</code> regresa un <code>Task&lt;TodoItem[]&gt;</code>? Regresar un <code>Task</code> significa que el m&#xE9;todo no necesariamente tendr&#xE1; un resultado, pero puedes usar la palabra clave <code>await</code> para asegurarte que tu c&#xF3;digo espera hasta que el resultado esta listo antes de continuar. </p>
+<p>El patr&#xF3;n de <code>Task</code> es com&#xFA;n cuando tu c&#xF3;digo realiza peticiones a la base de datos o una API de servicio, porque no ser&#xE1; capaz de regresar un resultado real hasta que la base de datos (o red) responda.Si haz usado promesas o callbacks en Javascript u otro lenguaje, <code>Task</code>es la misma idea: la promesa que habr&#xE1; un resultado - en alg&#xFA;n tiempo futuro.</p>
 <blockquote>
 <p>Si haz tenido que tratar con el &quot;infierno callback&quot; en el c&#xF3;digo heredado de Javascript, estas de suerte.
 Si has tenido que lidiar con el &quot;infierno de devoluci&#xF3;n de llamada&quot; en un c&#xF3;digo JavaScript m&#xE1;s antiguo, est&#xE1;s de suerte. Tratar con el c&#xF3;digo as&#xED;ncrono en .NET es mucho m&#xE1;s f&#xE1;cil gracias a la magia de la palabra clave &quot;esperar&quot;. <code>await</code> permite que su c&#xF3;digo se detenga en una operaci&#xF3;n as&#xED;ncrona, y luego retome lo que dej&#xF3; cuando la base de datos subyacente o la solicitud de red finaliza. Mientras tanto, su aplicaci&#xF3;n no est&#xE1; bloqueada, ya que puede procesar otras solicitudes seg&#xFA;n sea necesario. Este patr&#xF3;n es simple pero requiere un poco de tiempo para acostumbrarse, as&#xED; que no se preocupe si esto no tiene sentido de inmediato. &#xA1;Sigue sigui&#xE9;ndolo!</p>
 </blockquote>
 <p>El &#xFA;nico problema es que necesitas actualizar la firma del m&#xE9;todo <code>Index</code> para devolver un <code>Task&lt;IActionResult&gt;</code>en lugar de <code>IActionResult</code>, y marcarlo como <code>async</code>:
-El &#xFA;nico no tiene que actualizar la firma del m&#xE9;todo <code>Index</code> para regresar a <code>Task&lt;IActionResult&gt;</code> en place of sol un<code>IActionResult</code>, and marcarlo con <code>async</code>:</p>
+El &#xFA;nico no tiene que actualizar la firma del m&#xE9;todo <code>Index</code> para regresar a <code>Task&lt;IActionResult&gt;</code> en place of sol un <code>IActionResult</code>, y marcarlo con <code>async</code>:</p>
 <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">async</span> Task&lt;IActionResult&gt; <span class="hljs-title">Index</span>(<span class="hljs-params"></span>)
 </span>{
     <span class="hljs-keyword">var</span> items = <span class="hljs-keyword">await</span> _todoItemService.GetIncompleteItemsAsync();
 
-    <span class="hljs-comment">// Put items into a model</span>
+    <span class="hljs-comment">// Coloca las tareas en un modelo</span>
 
-    <span class="hljs-comment">// Pass the view to a model and render</span>
+    <span class="hljs-comment">// Pasa la vista al modelo y la genera</span>
 }
 </code></pre>
-<p>Ya casi terminamos. Has hecho que el <code>TodoController</code> dependa de la interface <code>ITodoItemService</code>, pero aun no le has dicho a ASP.NET Core que tu deseas el <code>FakeTodoItemService</code> sea el servicio actual que use debajo del capo. Parecer&#xE1; obvio ahora debido a que solo existe una clase que implementa la interfaz <code>ITodoItemService</code> , pero despu&#xE9;s tendr&#xE1;s m&#xFA;ltiples clases que implementan la misma interface, asi que ser explicito es necesario.</p>
-<p>Declarando (o conectando) cual clase concreta para usar para cada interface  se hace in el m&#xE9;todo <code>ConfigureServices</code> de la clase <code>Startup</code>. Ahora mismo algo como esto:</p>
+<p>Ya casi terminamos. Has hecho que el <code>TodoController</code> dependa de la interface <code>ITodoItemService</code>, pero aun no le has dicho a ASP.NET Core que tu deseas el <code>FakeTodoItemService</code> sea el servicio actual que use debajo del capo. Parecer&#xE1; obvio ahora debido a que solo existe una clase que implementa la interfaz <code>ITodoItemService</code>, pero despu&#xE9;s tendr&#xE1;s m&#xFA;ltiples clases que implementan la misma interface, asi que ser explicito es necesario.</p>
+<p>Declarando (o conectando) cual clase concreta para usar para cada interface se hace en el m&#xE9;todo <code>ConfigureServices</code> de la clase <code>Startup</code>. Ahora mismo algo como esto:</p>
 <p><strong>Startup.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ConfigureServices</span>(<span class="hljs-params">IServiceCollection services</span>)
 </span>{
@@ -694,7 +694,7 @@ El &#xFA;nico no tiene que actualizar la firma del m&#xE9;todo <code>Index</code
     services.AddMvc();
 }
 </code></pre>
-<p>El trabajo del m&#xE9;todo <code>ConfigureServices</code> es agregar cosos al contenedor de servicios, o a la colecci&#xF3;n de servicios que ASP.NET Core conocer&#xE1;. La linea <code>services.AddMvc</code> agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentario esta linea). Cualquier otro servicio que desees usar en tu aplicaci&#xF3;n debe ser agregado al conetnerdo de servicios en el <code>ConfigureServices</code>.</p>
+<p>El trabajo del m&#xE9;todo <code>ConfigureServices</code> es agregar cosas al contenedor de servicios, o a la colecci&#xF3;n de servicios que ASP.NET Core conocer&#xE1;. La linea <code>services.AddMvc</code> agregue el servicio que el sistema interno de ASP.NET Core, necesita (como un experimento, intenta comentar esta l&#xED;nea). Cualquier otro servicio que desees usar en tu aplicaci&#xF3;n debe ser agregado al contenedor de servicios en el m&#xE9;todo <code>ConfigureServices</code>.</p>
 <p>Agrega la siguiente linea en cualquier lugar dentro del m&#xE9;todo <code>ConfigureServices</code>,</p>
 <pre><code class="lang-csharp">services.AddSingleton&lt;ITodoItemService, FakeTodoItemService&gt;();
 </code></pre>
@@ -744,7 +744,7 @@ El &#xFA;nico no tiene que actualizar la firma del m&#xE9;todo <code>Index</code
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"next":{"title":"Terminando el controlador","level":"1.3.6","depth":2,"path":"chapters/mvc-basics/finish-controller.md","ref":"chapters/mvc-basics/finish-controller.md","articles":[]},"previous":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/use-dependency-injection.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"next":{"title":"Terminando el controlador","level":"1.3.6","depth":2,"path":"chapters/mvc-basics/finish-controller.md","ref":"chapters/mvc-basics/finish-controller.md","articles":[]},"previous":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/use-dependency-injection.md","mtime":"2019-03-15T21:50:27.459Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -759,10 +759,6 @@ El &#xFA;nico no tiene que actualizar la firma del m&#xE9;todo <code>Index</code
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

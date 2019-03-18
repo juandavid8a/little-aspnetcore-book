@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -632,13 +632,13 @@
                                 
                                 <h1 id="agregar-paquetes-externos"><a name="agregar-paquetes-externos" class="plugin-anchor" href="#agregar-paquetes-externos"><i class="fa fa-link" aria-hidden="true"></i></a>Agregar paquetes externos</h1>
 <p>Una de las grandes ventajas de usar un ecosistema maduro como .NET es que el n&#xFA;mero de paquetes y plugins de terceros es enorme. Al igual que otros sistemas de paquetes, puedes descargar e instalar paquetes .NET que te ayudaran con casi cualquier tarea o problema que puedas imaginar.</p>
-<p>NuGet es ambos, gestor de paquetes y el repositorio de paquetes oficial (en <a href="https://www.nuget.org" target="_blank">https://www.nuget.org</a>). Puedes buscar paquetes en la web, e instalarlos desde tu m&#xE1;quina local a trav&#xE9;s de la terminal (o Interfaz gr&#xE1;fica, si estas usando visual Studio).</p>
+<p>NuGet es ambos, gestor de paquetes y el repositorio de paquetes oficial (en <a href="https://www.nuget.org" target="_blank">https://www.nuget.org</a>). Puedes buscar paquetes en la web, e instalarlos desde tu m&#xE1;quina local a trav&#xE9;s de la terminal (o Interfaz gr&#xE1;fica, si estas usando Visual Studio).</p>
 <h2 id="instalar-el-paquete-humanizer"><a name="instalar-el-paquete-humanizer" class="plugin-anchor" href="#instalar-el-paquete-humanizer"><i class="fa fa-link" aria-hidden="true"></i></a>Instalar el paquete Humanizer</h2>
 <p>El final del &#xFA;ltimo cap&#xED;tulo, la aplicaci&#xF3;n de tareas mostraba las tareas de la siguiente manera:</p>
 <p><img src="iso8601.png" alt="Fechas en formato ISO 8601"></p>
 <p>La columna fecha est&#xE1; mostrando fechas en un formato que es bueno para las m&#xE1;quinas (llamado IS0 8601), pero ambiguo para humanos. &#xBF;No ser&#xED;a mejor si simplemente leemos &#x201C;X d&#xED;as a partir de hoy&#x201D;?</p>
 <p>Puedes escribir c&#xF3;digo por ti mismo para convertir una fecha en formato ISO 8601 en una cadena amigable para humanos, pero afortunadamente, hay una manera mucho m&#xE1;s r&#xE1;pida.</p>
-<p>El paquete Humanizer en NuGet soluciona este problema proporcionado m&#xE9;todos que pueden &quot;humanizar o reescribir casi cualquier cosa: fechas, horas, duraciones, n&#xFA;meros  y as&#xED; sucesivamente. Es un proyecto open source fant&#xE1;stico y &#xFA;til que es publicado bajo la licencia permisiva MIT.</p>
+<p>El paquete Humanizer en NuGet soluciona este problema proporcionado m&#xE9;todos que pueden &quot;humanizar&quot; o reescribir casi cualquier cosa: fechas, horas, duraciones, n&#xFA;meros y as&#xED; sucesivamente. Es un proyecto open source fant&#xE1;stico y &#xFA;til que es publicado bajo la licencia permisiva MIT.</p>
 <p>Para agregarlo a tu proyecto, ejecuta este comando en la terminal;</p>
 <pre><code>dotnet add package Humanizer
 </code></pre><p>Si das una ojeada en el archivo del proyecto <code>AspNetCoreTodo.csproj</code> veras una nueva l&#xED;nea <code>PackageReference</code> que hace referencia a <code>Humanizer</code>.</p>
@@ -651,14 +651,14 @@
 
 // ...
 </code></pre>
-<p>Despu&#xE9;s actualiza la l&#xED;nea que escribe la propiedad <code>DueAt</code>para usar  el m&#xE9;todo <code>Humanize</code> del paquete Humanizer:</p>
+<p>Despu&#xE9;s actualiza la l&#xED;nea que escribe la propiedad <code>DueAt</code> para usar el m&#xE9;todo <code>Humanize</code> del paquete Humanizer:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>@item.DueAt.Humanize()<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
 </code></pre>
 <p>Ahora las fechas son mucho m&#xE1;s legibles.</p>
 <p><img src="friendly-dates.png" alt="Fechas legibles para humanos"></p>
-<p>Hay paquetes disponibles en NuGet para todo desde parsear un XML to aprendizaje autom&#xE1;tico para postear en Twitter. ASP.NET Core mismo, bajo el capo, no es m&#xE1;s que una colecci&#xF3;n de paquetes de NuGet que son agregados a tu proyecto.</p>
+<p>Hay paquetes disponibles en NuGet para todo desde parsear un XML hasta aprendizaje autom&#xE1;tico para postear en Twitter. ASP.NET Core mismo, bajo el capo, no es m&#xE1;s que una colecci&#xF3;n de paquetes de NuGet que son agregados a tu proyecto.</p>
 <blockquote>
-<p>El archivo de proyecto creado por <code>dotnet new mvc</code> incluye una sola referencia al paquete <code>Microsoft.AspNetCore.All</code> que es un &quot;metapaquete&quot;  conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto t&#xED;pico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.  </p>
+<p>El archivo de proyecto creado por <code>dotnet new mvc</code> incluye una sola referencia al paquete <code>Microsoft.AspNetCore.All</code> que es un &quot;metapaquete&quot; conveniente que hace referencia a todos los otros paquetes de ASP.NET Core que necesitas para un proyecto t&#xED;pico. De esta forma no tienes que tener cientos de referencias a paquetes en tu archivo de proyecto.</p>
 </blockquote>
 <p>En el siguiente cap&#xED;tulo, usaras otro conjunto de paquetes de NuGet (un sistema llamado Entity Framework Core) para escribir c&#xF3;digo que interact&#xFA;a con una base de datos.</p>
 
@@ -704,7 +704,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Agregando paquetes externos","level":"1.4","depth":1,"next":{"title":"Usando una base de datos","level":"1.5","depth":1,"path":"chapters/use-a-database/README.md","ref":"chapters/use-a-database/README.md","articles":[{"title":"Conectarse a una base de datos","level":"1.5.1","depth":2,"path":"chapters/use-a-database/connect-to-a-database.md","ref":"chapters/use-a-database/connect-to-a-database.md","articles":[]},{"title":"Actualizando el contexto","level":"1.5.2","depth":2,"path":"chapters/use-a-database/update-context.md","ref":"chapters/use-a-database/update-context.md","articles":[]},{"title":"Crear una migración","level":"1.5.3","depth":2,"path":"chapters/use-a-database/create-migration.md","ref":"chapters/use-a-database/create-migration.md","articles":[]},{"title":"Crear una nueva clase de servicio","level":"1.5.4","depth":2,"path":"chapters/use-a-database/create-service-class.md","ref":"chapters/use-a-database/create-service-class.md","articles":[]}]},"previous":{"title":"Actualizar la plantilla","level":"1.3.7","depth":2,"path":"chapters/mvc-basics/update-the-layout.md","ref":"chapters/mvc-basics/update-the-layout.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/add-external-packages/README.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Agregando paquetes externos","level":"1.4","depth":1,"next":{"title":"Usando una base de datos","level":"1.5","depth":1,"path":"chapters/use-a-database/README.md","ref":"chapters/use-a-database/README.md","articles":[{"title":"Conectarse a una base de datos","level":"1.5.1","depth":2,"path":"chapters/use-a-database/connect-to-a-database.md","ref":"chapters/use-a-database/connect-to-a-database.md","articles":[]},{"title":"Actualizando el contexto","level":"1.5.2","depth":2,"path":"chapters/use-a-database/update-context.md","ref":"chapters/use-a-database/update-context.md","articles":[]},{"title":"Crear una migración","level":"1.5.3","depth":2,"path":"chapters/use-a-database/create-migration.md","ref":"chapters/use-a-database/create-migration.md","articles":[]},{"title":"Crear una nueva clase de servicio","level":"1.5.4","depth":2,"path":"chapters/use-a-database/create-service-class.md","ref":"chapters/use-a-database/create-service-class.md","articles":[]}]},"previous":{"title":"Actualizar la plantilla","level":"1.3.7","depth":2,"path":"chapters/mvc-basics/update-the-layout.md","ref":"chapters/mvc-basics/update-the-layout.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/add-external-packages/README.md","mtime":"2019-03-15T21:39:11.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -719,10 +719,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

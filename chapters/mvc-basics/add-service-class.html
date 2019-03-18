@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -632,21 +632,21 @@
                                 
                                 <h1 id="agregar-una-clase-de-servicio"><a name="agregar-una-clase-de-servicio" class="plugin-anchor" href="#agregar-una-clase-de-servicio"><i class="fa fa-link" aria-hidden="true"></i></a>Agregar una clase de servicio</h1>
 <p>Haz creado un modelo, una vista y un controlador. Antes de usar el modelo y la vista en el controlador, tambi&#xE9;n necesitas escribir c&#xF3;digo que obtendr&#xE1; la lista de tareas de los usuarios desde la base de datos.</p>
-<p>Puedes escribir este c&#xF3;digo directamente en el controlador, pero es una mejor pr&#xE1;ctica mantener tu c&#xF3;digo separado. &#xBF;Por qu&#xE9;? en un real aplicaci&#xF3;n grande, tendr&#xE1;s que hacer malabares con muchos asuntos:</p>
+<p>Puedes escribir este c&#xF3;digo directamente en el controlador, pero es una mejor pr&#xE1;ctica mantener tu c&#xF3;digo separado. &#xBF;Por qu&#xE9;? en una aplicaci&#xF3;n real grande, tendr&#xE1;s que hacer malabares con muchos asuntos:</p>
 <ul>
 <li><strong>Generar la Vista</strong> y manipular datos de entrada: esto actualmente es realzado por el controlador.</li>
-<li><strong>Ejecutar las reglas de negocio</strong>, o c&#xF3;digo que esta relacionado con el prop&#xF3;sito y negocio de tu aplicaci&#xF3;n, en una aplicaci&#xF3;n de lista de tareas, reglas de negocio significa decisiones como configurar la fecha por default para la entrega o solo mostrar tareas que est&#xE1;n incompletas. Otros ejemplo de l&#xF3;gica de negocio incluyen calcular el costo total basandose sobre el precio de los productos raz&#xF3;n de impuesto o verificar si alg&#xFA;n jugador tiene puntos suficiente para subir de nivel en un juego.</li>
-<li><strong>Obtener y guardar</strong> art&#xED;culos desde la base de datos.</li>
+<li><strong>Ejecutar las reglas de negocio</strong>, o c&#xF3;digo que esta relacionado con el prop&#xF3;sito y negocio de tu aplicaci&#xF3;n, en una aplicaci&#xF3;n de lista de tareas, reglas de negocio significa decisiones como configurar la fecha por omisi&#xF3;n para la entrega o solo mostrar tareas que est&#xE1;n incompletas. Otros ejemplo de l&#xF3;gica de negocio incluyen calcular el costo total con base en el precio, de los productos, raz&#xF3;n de impuesto o verificar si alg&#xFA;n jugador tiene puntos suficiente para subir de nivel en un juego.</li>
+<li><strong>Obtener y guardar</strong> tareas desde la base de datos.</li>
 </ul>
-<p>Una vez m&#xE1;s es posible hacer todas estas cosas en un solo y enorme controlador, que r&#xE1;pidamente se convertir&#xED;a en dif&#xED;cil de manejar y probar. En lugar es com&#xFA;n ver aplicaciones dividen en dos o tres o mas capas y tiers de tal forma que cada una maneja uno (y solo una) aspecto de la aplicaci&#xF3;n. Esto ayuda a mantener el controlador tan simple como sea posible, y hace mas f&#xE1;cil probar y cambiar la l&#xF3;gica de negocio y el c&#xF3;digo de acceso a base de datos despu&#xE9;s.</p>
-<p>Separado tu aplicaci&#xF3;n en esta forma es a veces llamada <strong>mult-tier</strong> o <strong>n-tier architecture</strong> arquitectura. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo mas importante es pensar a cerca de como dividir tu aplicaci&#xF3;n en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.</p>
-<p>Para este proyecto, usaras dos capa de aplicaci&#xF3;n: una <strong>capa de presentaci&#xF3;n</strong> compuesta de controladores y vistas que interact&#xFA;an con el usuario, y una capa de servicio que combina las reglas del negocio con el c&#xF3;digo de accesos a base de datos. La capa de presentaci&#xF3;n ya existes. asi que el siguiente paso es construir un servicio que manipulo las reglas de negocio para las tareas y guarda las tareas en una base da datos. .</p>
+<p>Una vez m&#xE1;s es posible hacer todas estas cosas en un solo y enorme controlador, que r&#xE1;pidamente se convertir&#xED;a en dif&#xED;cil de manejar y probar. En lugar es com&#xFA;n ver aplicaciones dividen en dos o tres o m&#xE1;s capas y tiers de tal forma que cada una maneja uno (y solo una) aspecto de la aplicaci&#xF3;n. Esto ayuda a mantener el controlador tan simple como sea posible, y hace m&#xE1;s f&#xE1;cil probar y cambiar la l&#xF3;gica de negocio y el c&#xF3;digo de acceso a base de datos despu&#xE9;s.</p>
+<p>Separado tu aplicaci&#xF3;n en esta forma es a veces llamada <strong>mult-tier</strong> o <strong>n-tier arquitectura</strong>. En algunos casos los tiers o capas son proyectos completamente separados. Pero otras veces i solo se referencia a como las clases son organizadas y utilizadas. Lo m&#xE1;s importante es pensar a cerca de como dividir tu aplicaci&#xF3;n en piezas manejables y evitar tener controladores o clases enormes que intentan hacer todo.</p>
+<p>Para este proyecto, usaras dos capa de aplicaci&#xF3;n: una <strong>capa de presentaci&#xF3;n</strong> compuesta de controladores y vistas que interact&#xFA;an con el usuario, y una capa de servicio que combina las reglas del negocio con el c&#xF3;digo de accesos a base de datos. La capa de presentaci&#xF3;n ya existe asi que el siguiente paso es crear un servicio que maneja las reglas de negocio para las tareas y las guarda en una base da datos.</p>
 <blockquote>
-<p>La mayor&#xED;a de los proyectos grandes usan una arquitectura 3-tier: una capa de presentaci&#xF3;n, una capa l&#xF3;gica de servicios y una capa de repositorio de datos. Un repositorio es una clase que que solo esta enfocada en c&#xF3;digo de acceso a base de datos (no l&#xF3;gica de negocios). En esta aplicaci&#xF3;n, por simplicidad, c&#xF3;digo combinaras estas en un sola capa de servicio  pero si&#xE9;ntete libre de experimentar con diferentes formas de estructurar el c&#xF3;digo.</p>
+<p>La mayor&#xED;a de los proyectos grandes usan una arquitectura 3-tier: una capa de presentaci&#xF3;n, una capa l&#xF3;gica de servicios y una capa de repositorio de datos. Un repositorio es una clase que que solo esta enfocada en c&#xF3;digo de acceso a base de datos (no l&#xF3;gica de negocios). En esta aplicaci&#xF3;n, por simplicidad, c&#xF3;digo combinaras estas en un sola capa de servicio pero si&#xE9;ntete libre de experimentar con diferentes formas de estructurar el c&#xF3;digo.</p>
 </blockquote>
 <h2 id="crear-una-interfaz"><a name="crear-una-interfaz" class="plugin-anchor" href="#crear-una-interfaz"><i class="fa fa-link" aria-hidden="true"></i></a>Crear una interfaz</h2>
-<p>El lenguaje de programaci&#xF3;n C# incluye el concepto de <strong>interfaces</strong>, donde la definici&#xF3;n de de los m&#xE9;todos y propiedades de un objeto es separada de la clase que actualmente contiene el c&#xF3;digo de aquellos m&#xE9;todos y propiedades. Las interfaces hace f&#xE1;cil mantener tus clases desacopladas y f&#xE1;ciles de probar,como veras aqu&#xED; (y despu&#xE9;s en el capitulo _Pruebas Autom&#xE1;ticas)Usaras una interfaces para represente el servicio que puede interactu&#xE1; con los art&#xED;culos en la base de datos.</p>
-<p>Por convenci&#xF3;n, las el nombre de las interfaces tiene el prefijo &quot;I&quot;.Crea un nuevo archivo en el directorio Services:</p>
+<p>El lenguaje de programaci&#xF3;n C# incluye el concepto de <strong>interfaces</strong>, donde la definici&#xF3;n de los m&#xE9;todos y propiedades de un objeto es separada de la clase que actualmente contiene el c&#xF3;digo de aquellos m&#xE9;todos y propiedades. Las interfaces hace f&#xE1;cil mantener tus clases desacopladas y f&#xE1;ciles de probar, como veras aqu&#xED; (y despu&#xE9;s en el cap&#xED;tulo _Pruebas Autom&#xE1;ticas)Usaras una interfaces para represente el servicio que puede interactu&#xE1; con los elementos en la base de datos.</p>
+<p>Por convenci&#xF3;n, el nombre de las interfaces tiene el prefijo &quot;I&quot;. Crea un nuevo archivo en el directorio Services:</p>
 <p><strong>Services/ITodoItemService.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
 <span class="hljs-keyword">using</span> System.Collections.Generic;
@@ -661,16 +661,16 @@
     }
 }
 </code></pre>
-<p>Nota que el espacio de nombres de este archivo es <code>AspNetCoreTodo.Services</code>. Los espacios de nombres son una forma de organizar los archivos de c&#xF3;digo .NET. y se acostumbra nombrar el espacio de nombres siguiendo el directorio en que esta almacenado del archivo in (<code>AspNetCoreTodo.Services</code> para archivos en el directorio  <code>Services</code> y asi sucesivamente).</p>
-<p>Because this file (in the <code>AspNetCoreTodo.Services</code> namespace) references the <code>TodoItem</code> class (in the <code>AspNetCoreTodo.Models</code> namespace), it needs to include a <code>using</code> statement at the top of the file to import that namespace. Si el enuncuado  <code>using</code> veras un error como:</p>
-<pre><code>El tipo o espacio de nombre &apos;TodoItem&apos; no puede encontrases (are you missing a using directive or an assembly reference?)
-</code></pre><p>Debido a que esta es una interfaces, no hay ning&#xFA;n c&#xF3;digo aqu&#xED; , solo la definici&#xF3;n (o la firma del m&#xE9;todos) del <code>GetIncompleteItemsAsync</code> m&#xE9;todo. Este m&#xE9;todo no requiere para mentros y regresas un <code>Task&lt;TodoItem[]&gt;</code>.</p>
+<p>Nota que el espacio de nombres de este archivo es <code>AspNetCoreTodo.Services</code>. Los espacios de nombres son una forma de organizar los archivos de c&#xF3;digo .NET. y se acostumbra nombrar el espacio de nombres siguiendo el directorio en que esta almacenado del archivo (<code>AspNetCoreTodo.Services</code> para archivos en el directorio  <code>Services</code> y asi sucesivamente).</p>
+<p>Debido a que este archivo (en el espacio de nombres <code>AspNetCoreTodo.Services</code>) hace referencia a la clase <code>TodoItem</code> (en el espacio de nombres <code>AspNetCoreTodo.Models</code>), debe incluir una declaraci&#xF3;n <code>using</code> en la parte superior del archivo para importar ese espacio de nombres. Sin la instrucci&#xF3;n <code>using</code>, ver&#xE1;s un error como:</p>
+<pre><code>The type or namespace name &apos;TodoItem&apos; could not be found (are you missing a using directive or an assembly reference?)
+</code></pre><p>Debido a que esta es una interfaces, no hay ning&#xFA;n c&#xF3;digo aqu&#xED;, solo la definici&#xF3;n (o la firma del m&#xE9;todo) <code>GetIncompleteItemsAsync</code>. Este m&#xE9;todo no requiere par&#xE1;metros y regresa un objeto del tipo  <code>Task&lt;TodoItem[]&gt;</code>.</p>
 <blockquote>
-<p>Si la sintaxis parece confusa, prines &quot; un Task que contiene un arreglo de TodoItems&quot;</p>
+<p>Si la sintaxis parece confusa, recuerda &quot;una Tarea(Task) que contiene un arreglo de TodoItems&quot;</p>
 </blockquote>
-<p>El tipo <code>Task</code> es similar un futuro o promesa, y es usado aqu&#xED; porque este m&#xE9;todos sea as&#xED;ncrono. En otras palabras el m&#xE9;todo puede no se capaz de regresar la lista de tare justo porque necesita interactuara con la base de datos primero.(Mas sobre esto despu&#xE9;s).</p>
+<p>El tipo <code>Task</code> es similar un futuro o promesa, y se usa aqu&#xED; porque este m&#xE9;todo sera as&#xED;ncrono. En otras palabras es posible que el m&#xE9;todo no pueda ser capaz de regresar la lista de tareas pendientes de forma inmediata porque necesita primero interactuar con la base de datos primero. (M&#xE1;s sobre esto despu&#xE9;s).</p>
 <h2 id="crear-la-clase-de-servicio"><a name="crear-la-clase-de-servicio" class="plugin-anchor" href="#crear-la-clase-de-servicio"><i class="fa fa-link" aria-hidden="true"></i></a>Crear la clase de servicio</h2>
-<p>Ahora que la interfaz esta definida, estas listo para crear la clase del servicio actual. Cubrir&#xE9; el c&#xF3;digo de acceso a base de datos a detalle en el capitulo <em>Usar una base de datos</em> , as&#xED; que por ahora solo usaras datos falsos y siempre regresara 2 art&#xED;culos est&#xE1;ticos;</p>
+<p>Ahora que la interfaz esta definida, estas listo para crear la clase del servicio actual. Cubrir&#xE9; el c&#xF3;digo de acceso a base de datos a detalle en el cap&#xED;tulo <em>Usar una base de datos</em>, as&#xED; que por ahora solo usaras datos falsos y siempre regresara 2 tareas definidas de forma est&#xE1;tica;</p>
 <p><strong>Services/FakeTodoItemService.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
 <span class="hljs-keyword">using</span> System.Collections.Generic;
@@ -700,7 +700,7 @@
     }
 }
 </code></pre>
-<p>La clase <code>FakeTodoItemService</code> implementa la interfaz<code>ITodoItemService</code> pero siempre regresa el mismo arreglo de dos <code>TodoItem</code>. Usaras esta para poblar el controlador y la vista y despu&#xE9;s agregaras c&#xF3;digo de bases de datos real in <em>Usando una base de datos</em>.</p>
+<p>La clase <code>FakeTodoItemService</code> implementa la interfaz <code>ITodoItemService</code> pero siempre regresa el mismo arreglo de dos <code>TodoItem</code>. Usaras esta para poblar el controlador y la vista y despu&#xE9;s agregaras c&#xF3;digo de bases de datos real en <em>Usando una base de datos</em>.</p>
 
                                 
                                 </section>
@@ -744,7 +744,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"next":{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"path":"chapters/mvc-basics/use-dependency-injection.md","ref":"chapters/mvc-basics/use-dependency-injection.md","articles":[]},"previous":{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/add-service-class.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"next":{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"path":"chapters/mvc-basics/use-dependency-injection.md","ref":"chapters/mvc-basics/use-dependency-injection.md","articles":[]},"previous":{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/add-service-class.md","mtime":"2019-03-15T21:55:47.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -759,10 +759,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

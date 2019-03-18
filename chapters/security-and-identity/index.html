@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -634,12 +634,12 @@
 <p>La seguridad es una de las principales preocupaciones de cualquier aplicaci&#xF3;n web moderna o API. Es importante mantener seguros los datos de sus usuarios o usuarios y fuera del alcance de los atacantes. Este es un tema muy amplio, que involucra cosas como:</p>
 <ul>
 <li>Desinfecci&#xF3;n de entrada de datos para evitar ataques de inyecci&#xF3;n de SQL.</li>
-<li>Prevenci&#xF3;n de ataques de dominio cruzado (CSRF) en formularios</li>
+<li>Prevenci&#xF3;n de ataques de falsificaci&#xF3;n de petici&#xF3;n en sitios cruzados(CSRF) en formularios</li>
 <li>Utilizando HTTPS (cifrado de conexi&#xF3;n) para que los datos no puedan ser interceptados mientras viaja a trav&#xE9;s de Internet</li>
 <li>Proporcionar a los usuarios una forma segura de iniciar sesi&#xF3;n con una contrase&#xF1;a u otras credenciales</li>
 <li>Dise&#xF1;o de restablecimiento de contrase&#xF1;as, recuperaci&#xF3;n de cuentas y flujos de autenticaci&#xF3;n multifactor</li>
 </ul>
-<p>ASP.NET Core puede ayudar a que todo esto sea m&#xE1;s f&#xE1;cil de implementar. Los dos primeros (protecci&#xF3;n contra inyecci&#xF3;n de SQL y ataques de dominio cruzado) ya est&#xE1;n incorporados, y puede agregar algunas l&#xED;neas de c&#xF3;digo para habilitar el soporte de HTTPS. Este cap&#xED;tulo se centrar&#xE1; principalmente en los aspectos de identidad** de seguridad: manejo de cuentas de usuario, autenticaci&#xF3;n (inicio de sesi&#xF3;n) de sus usuarios de forma segura y toma de decisiones de autorizaci&#xF3;n una vez que se autentiquen.</p>
+<p>ASP.NET Core puede ayudar a que todo esto sea m&#xE1;s f&#xE1;cil de implementar. Los dos primeros (protecci&#xF3;n contra inyecci&#xF3;n de SQL y ataques de falsificaci&#xF3;n de petici&#xF3;n en sitios cruzados) ya est&#xE1;n incorporados, y puede agregar algunas l&#xED;neas de c&#xF3;digo para habilitar el soporte de HTTPS. Este cap&#xED;tulo se centrar&#xE1; principalmente en los aspectos de identidad** de seguridad: manejo de cuentas de usuario, autenticaci&#xF3;n (inicio de sesi&#xF3;n) de sus usuarios de forma segura y toma de decisiones de autorizaci&#xF3;n una vez que se autentiquen.</p>
 <blockquote>
 <p>La autenticaci&#xF3;n y la autorizaci&#xF3;n son ideas distintas que a menudo se confunden. <strong>La autenticaci&#xF3;n</strong> se ocupa de si un usuario est&#xE1; conectado, mientras que <strong>la autorizaci&#xF3;n</strong> se ocupa de lo que est&#xE1; autorizado a hacer <em>despu&#xE9;s de</em> que inicie sesi&#xF3;n. Se puede pensar en la autenticaci&#xF3;n como una pregunta: &quot;&#xBF;S&#xE9; qui&#xE9;n? este usuario es? &quot; Mientras que la autorizaci&#xF3;n pregunta: &quot;&#xBF;Tiene este usuario permiso para hacer <em>X</em>?&quot;</p>
 </blockquote>
@@ -647,7 +647,7 @@
 <h2 id="&#xBF;qu&#xE9;-es-aspnet-core-identity"><a name="&#xBF;qu&#xE9;-es-aspnet-core-identity" class="plugin-anchor" href="#&#xBF;qu&#xE9;-es-aspnet-core-identity"><i class="fa fa-link" aria-hidden="true"></i></a>&#xBF;Qu&#xE9; es ASP.NET Core Identity?</h2>
 <p>ASP.NET Core Identity es el sistema de identidad que se incluye con ASP.NET Core. Como todo lo dem&#xE1;s en el ecosistema de ASP.NET Core, es un conjunto de paquetes de NuGet que se pueden instalar en cualquier proyecto (y ya est&#xE1;n incluidos si usa la plantilla predeterminada).</p>
 <p>ASP.NET Core Identity se encarga de almacenar las cuentas de usuario, el hash y el almacenamiento de las contrase&#xF1;as y la administraci&#xF3;n de roles para los usuarios. Es compatible con el inicio de sesi&#xF3;n de correo electr&#xF3;nico / contrase&#xF1;a, autenticaci&#xF3;n multifactorial, inicio de sesi&#xF3;n social con proveedores como Google y Facebook, as&#xED; como la conexi&#xF3;n a otros servicios mediante protocolos como OAuth 2.0 y OpenID Connect.</p>
-<p>Las vistas de registro e inicio de sesi&#xF3;n que se suministran con la plantilla de  de MVC + autenticaci&#xF3;n individual ya aprovechan la identidad central de ASP.NET, &#xA1;y ya funcionan! Intenta registrarte para obtener una cuenta e iniciar sesi&#xF3;n.</p>
+<p>Las vistas de registro e inicio de sesi&#xF3;n que se suministran con la plantilla de MVC + autenticaci&#xF3;n individual ya aprovechan la identidad central de ASP.NET, &#xA1;y ya funcionan! Intenta registrarte para obtener una cuenta e iniciar sesi&#xF3;n.</p>
 
                                 
                                 </section>
@@ -675,7 +675,7 @@
 
             
                 
-                <a href="../add-more-features/complete-with-checkbox.html" class="navigation navigation-prev " aria-label="Previous page: Actividades completadas con listas de verificación">
+                <a href="../add-more-features/complete-with-checkbox.html" class="navigation navigation-prev " aria-label="Previous page: Completar las tareas con una casilla de verificación">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -691,7 +691,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Seguridad e Identidad","level":"1.7","depth":1,"next":{"title":"Requerir autenticación","level":"1.7.1","depth":2,"path":"chapters/security-and-identity/require-authentication.md","ref":"chapters/security-and-identity/require-authentication.md","articles":[]},"previous":{"title":"Actividades completadas con listas de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/security-and-identity/README.md","mtime":"2019-03-06T18:39:32.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Seguridad e Identidad","level":"1.7","depth":1,"next":{"title":"Requerir autenticación","level":"1.7.1","depth":2,"path":"chapters/security-and-identity/require-authentication.md","ref":"chapters/security-and-identity/require-authentication.md","articles":[]},"previous":{"title":"Completar las tareas con una casilla de verificación","level":"1.6.2","depth":2,"path":"chapters/add-more-features/complete-with-checkbox.md","ref":"chapters/add-more-features/complete-with-checkbox.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/security-and-identity/README.md","mtime":"2019-03-13T14:57:58.145Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -706,10 +706,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

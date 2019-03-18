@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -631,25 +631,25 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="fundamentos-de-mvc"><a name="fundamentos-de-mvc" class="plugin-anchor" href="#fundamentos-de-mvc"><i class="fa fa-link" aria-hidden="true"></i></a>Fundamentos de MVC</h1>
-<p>En este capitulo, explorar&#xE1;s el patr&#xF3;n MVC en ASP.NET Core. <strong>MVC</strong> (Modelo-Vista-Controlador) es un patr&#xF3;n para construir aplicaciones web que es usado en casi todos los marcos de desarollo web (ejemplos populares son Ruby on Rails y Express),adicionalmente marcos de trabajo del lado de cliente con Javascript como Angular. Aplicaciones m&#xF3;viles sobre iOS y Android tambi&#xE9;n usan una variante de MVC.</p>
-<p>Como el nombre sugiere MVC tiene tres componentes: modelos, vistas y controladores. Los <strong>Controladores</strong> gestionan las solicitudes de entrada desde un cliente o un navegador web y deciden acerca de que c&#xF3;digo ejecutar. Las <strong>vistas</strong> son plantillas (usualmente HTML m&#xE1;s un lenguaje de plantillas como Handlebar, Pug o Razor) que contienen datos a&#xF1;adidos a el que luego son mostrados a los usuario.Los <strong>Modelos</strong> mantienen los datos que son agregado a las vistas, o los datos que son ingresados por los usuarios.</p>
+<p>En este cap&#xED;tulo, explorar&#xE1;s el patr&#xF3;n MVC en ASP.NET Core. <strong>MVC</strong> (Modelo-Vista-Controlador) es un patr&#xF3;n para crear aplicaciones web que es usado en casi todos los marcos de desarollo web (ejemplos populares son Ruby on Rails y Express), adicionalmente marcos de trabajo del lado de cliente con Javascript como Angular. Las aplicaciones m&#xF3;viles sobre iOS y Android tambi&#xE9;n usan una variante de MVC.</p>
+<p>Como el nombre sugiere MVC tiene tres componentes: modelos, vistas y controladores. Los <strong>Controladores</strong> gestionan las solicitudes de entrada desde un cliente o un navegador web y deciden acerca de que c&#xF3;digo ejecutar. Las <strong>vistas</strong> son plantillas (usualmente HTML m&#xE1;s un lenguaje de plantillas como Handlebars, Pug o Razor) que contienen datos a&#xF1;adidos a el que luego son mostrados a los usuario.Los <strong>Modelos</strong> mantienen los datos que son agregado a las vistas, o los datos que son ingresados por los usuarios.</p>
 <p>Un patr&#xF3;n com&#xFA;n para el c&#xF3;digo MVC es:</p>
 <ul>
-<li>El controlador recibe una petici&#xF3;n y busca alguna informaci&#xF3;n en una base de datos</li>
+<li>El controlador recibe una petici&#xF3;n y busca alguna informaci&#xF3;n en una base de datos.</li>
 <li>El controlador crea un modelo con la informaci&#xF3;n y la adjunta a la vista.</li>
-<li>La vista es generada y mostrada en el navegador del usuario</li>
-<li>El usuario presiona un bot&#xF3;n o env&#xED;a un formulario, el cual envi&#xE1; una nueva solicitud al controlador y el ciclo se repite.</li>
+<li>La vista es generada y mostrada en el navegador del usuario.</li>
+<li>El usuario presiona un bot&#xF3;n o env&#xED;a un formulario, lo que envi&#xE1; una nueva solicitud al controlador y el ciclo se repite.</li>
 </ul>
-<p>Si has trabajado con MVC en otros lenguajes, te sentir&#xE1;s como en casa en ASP.NET Core MVC. Si eres nuevo en MVC, este capitulo te ense&#xF1;ara lo b&#xE1;sico y te ayudara a iniciar.</p>
-<h2 id="&#xBF;qu&#xE9;-es-lo-que-contruir&#xE1;s"><a name="&#xBF;qu&#xE9;-es-lo-que-contruir&#xE1;s" class="plugin-anchor" href="#&#xBF;qu&#xE9;-es-lo-que-contruir&#xE1;s"><i class="fa fa-link" aria-hidden="true"></i></a>&#xBF;Qu&#xE9; es lo que contruir&#xE1;s?</h2>
+<p>Si has trabajado con MVC en otros lenguajes, te sentir&#xE1;s como en casa en ASP.NET Core MVC. Si eres nuevo en MVC, este cap&#xED;tulo te ense&#xF1;ara lo b&#xE1;sico y te ayudar&#xE1; a iniciar.</p>
+<h2 id="lo-que-vas-a-programar"><a name="lo-que-vas-a-programar" class="plugin-anchor" href="#lo-que-vas-a-programar"><i class="fa fa-link" aria-hidden="true"></i></a>Lo que vas a programar</h2>
 <p>El ejercicio de &quot;Hola Mundo&quot; de MVC es construir una aplicaci&#xF3;n de lista de tareas. Es un proyecto genial ya que es peque&#xF1;o y simple en alcance, pero trata cada una de las partes de MVC y cubre muchos conceptos que usaras en un aplicaci&#xF3;n m&#xE1;s grande.</p>
-<p>En este libro, construir&#xE1;s una aplicaci&#xF3;n de gesti&#xF3;n de tareas que dejara al usuario agregar elementos a su lista de tareas y verificar una vez que la tarea se ha completado. M&#xE1;s espec&#xED;ficamente estar&#xE1;s creando:</p>
+<p>En este libro, desarrollaras una aplicaci&#xF3;n de gesti&#xF3;n de tareas pendientes que dejara al usuario agregar elementos a su lista de tareas y una vez que la tarea se ha completado. M&#xE1;s espec&#xED;ficamente estar&#xE1;s creando:</p>
 <ul>
 <li>Una aplicaci&#xF3;n web de servidor (a veces llamada Back-End) usando a ASP.NET Core, C# y el patr&#xF3;n MVC.</li>
 <li>Una base de datos para almacenar la lista de tareas del usuario usando el motor de base de datos SQLite y un sistema llamado Entity Framework Core.</li>
-<li>Las paginas web y la interfaz con la que el usuario interactur&#xE1; via el navegador. Usando HTML, CSS y Javascript (llamado el FrontEnd).</li>
+<li>Las p&#xE1;ginas web y la interfaz con la que el usuario interactur&#xE1; v&#xED;a el navegador. Usando HTML, CSS y Javascript (llamado el FrontEnd).</li>
 <li><p>Un formulario de inicio de sesi&#xF3;n y verificaci&#xF3;n de seguridad as&#xED; cada usuario mantendr&#xE1; su lista de tareas privada.</p>
-<p>&#xBF;Suena bien? &#xA1;Vamos a construirla! si no haz creado una aplicaci&#xF3;n nueva en APS.NET Core proyecto usando <code>dotnet new mvc</code> , sigue los pasos en el capitulo anterior,debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,</p>
+<p>&#xBF;Suena bien? &#xA1;Vamos a construirla! si no haz creado una aplicaci&#xF3;n nueva en ASP.NET Core proyecto usando <code>dotnet new mvc</code>, sigue los pasos en el cap&#xED;tulo anterior, debes ser capaz de construir y ejecutar el proyecto y ver la pantalla de bienvenida,</p>
 </li>
 </ul>
 
@@ -695,7 +695,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Fundamentos de MVC","level":"1.3","depth":1,"next":{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},"previous":{"title":"Crear un proyecto de ASP.NET Core","level":"1.2.3","depth":2,"path":"chapters/your-first-application/create-aspnetcore-project.md","ref":"chapters/your-first-application/create-aspnetcore-project.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/README.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Fundamentos de MVC","level":"1.3","depth":1,"next":{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},"previous":{"title":"Crear un proyecto de ASP.NET Core","level":"1.2.3","depth":2,"path":"chapters/your-first-application/create-aspnetcore-project.md","ref":"chapters/your-first-application/create-aspnetcore-project.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/README.md","mtime":"2019-03-15T21:54:11.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -710,10 +710,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -636,9 +636,9 @@
 <pre><code>cd Documentos
 </code></pre><p>Usa el comando <code>dotnet</code> para crear un nuevo proyecto:</p>
 <pre><code>dotnet new console -o CsharpHelloWorld
-</code></pre><p>El comando <code>dotnet new</code> crea un nuevo proyecto de .NET con C# por omisi&#xF3;n. El par&#xE1;metro <code>console</code> selecciona una plantilla para una aplicaci&#xF3;n de consola ( un programa que emite texto en la pantalla).El par&#xE1;metro <code>-o CsharpHelloWorld</code> instruye a <code>dotnet new</code> para crear una carpeta llamada <code>CsharpHelloWorld</code> para los archivos del proyecto . Cambiate a esta carpeta asi:</p>
+</code></pre><p>El comando <code>dotnet new</code> crea un nuevo proyecto de .NET con C# como lenguaje predeterminado. El par&#xE1;metro <code>console</code> selecciona una plantilla para una aplicaci&#xF3;n de consola ( un programa que emite texto en la pantalla).El par&#xE1;metro <code>-o CsharpHelloWorld</code> instruye a <code>dotnet new</code> para crear una carpeta llamada <code>CsharpHelloWorld</code> para los archivos del proyecto . Cambiate a esta carpeta asi:</p>
 <pre><code>cd CsharpHelloWorld
-</code></pre><p><code>dotnet new console</code> crea un programa de C# b&#xE1;sico que escribe el texto <code>Hello World!</code> en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto(con extensi&#xF3;n <code>.csproj</code>) y un archivo de c&#xF3;digo de C# (con extensi&#xF3;n<code>.cs</code>). Si abres el primer archivo en un editor de texto, veras esto :</p>
+</code></pre><p><code>dotnet new console</code> crea un programa de C# b&#xE1;sico que escribe el texto <code>Hello World!</code> en la pantalla. El programa esta compuesto por dos archivos: un archivo de proyecto (con extensi&#xF3;n <code>.csproj</code>) y un archivo de c&#xF3;digo de C# (con extensi&#xF3;n <code>.cs</code>). Si abres el primer archivo en un editor de texto, veras esto :</p>
 <p><strong>CsharpHelloWorld.csproj</strong></p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Project</span> <span class="hljs-attr">Sdk</span>=<span class="hljs-string">&quot;Microsoft.NET.Sdk&quot;</span>&gt;</span>
 
@@ -649,7 +649,7 @@
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">Project</span>&gt;</span>
 </code></pre>
-<p>El archivo de proyecto esta baso en XML y define algunos metadatos sobre el proyecto. Despu&#xE9;s, cuando referencias otros paquetes, aquellos ser&#xE1;n listados aqu&#xED; (de forma similar a un un archivo <code>package.json</code> para npm). No necesitar&#xE1;s editar est&#xE9; archivo de forma manual muy seguido.</p>
+<p>El archivo de proyecto esta basado en XML y define algunos metadatos sobre el proyecto. Despu&#xE9;s, cuando agregues otros paquetes, estos ser&#xE1;n listados aqu&#xED; (de forma similar a un un archivo <code>package.json</code> para npm). No necesitar&#xE1;s editar est&#xE9; archivo de forma manual muy seguido.</p>
 <p><strong>Program.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
 
@@ -664,13 +664,13 @@
     }
 }
 </code></pre>
-<p>El m&#xE9;todo <code>static void Main</code> es el punto de entrada de un programa de C#, y por convenci&#xF3;n esta colocado en una clase (un tipo de c&#xF3;digo estructura o modulo) llamado <code>Program</code>. El enunciado <code>using</code> al inicio importa las clases incluidas en espacio de nombres <code>System</code> desde .NET y las hace disponibles en el c&#xF3;digo en t&#xFA; clase.</p>
+<p>El m&#xE9;todo <code>static void Main</code> es el punto de entrada de un programa de C#, y por convenci&#xF3;n esta colocado dentro de una clase (un tipo de estructura de c&#xF3;digo o modulo) llamado <code>Program</code>. El enunciado <code>using</code> al inicio importa las clases incluidas en espacio de nombres <code>System</code> desde .NET y las hace disponibles en el c&#xF3;digo en t&#xFA; clase.</p>
 <p>Dentro de la carpeta del proyecto, usa <code>dotnet run</code> para ejecutar el programa. Veras que la salida se escribe en la consola despu&#xE9;s que el c&#xF3;digo compila:</p>
 <pre><code class="lang-text">dotnet run
 
-!Hola Mundo!
+Hello World!
 </code></pre>
-<p>!Esto es todo lo necesario para crear y ejecutar un programa en .NET! Enseguida, har&#xE1;s lo mismo para una aplicaci&#xF3;n ASP.NET Core.</p>
+<p>&#xA1;Esto es todo lo necesario para crear y ejecutar un programa en .NET! Enseguida, har&#xE1;s lo mismo para una aplicaci&#xF3;n de ASP.NET Core.</p>
 
                                 
                                 </section>
@@ -714,7 +714,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hola Mundo en C#","level":"1.2.2","depth":2,"next":{"title":"Crear un proyecto de ASP.NET Core","level":"1.2.3","depth":2,"path":"chapters/your-first-application/create-aspnetcore-project.md","ref":"chapters/your-first-application/create-aspnetcore-project.md","articles":[]},"previous":{"title":"Consigue el SDK","level":"1.2.1","depth":2,"path":"chapters/your-first-application/get-the-sdk.md","ref":"chapters/your-first-application/get-the-sdk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/your-first-application/hello-world-in-csharp.md","mtime":"2019-03-06T18:39:32.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hola Mundo en C#","level":"1.2.2","depth":2,"next":{"title":"Crear un proyecto de ASP.NET Core","level":"1.2.3","depth":2,"path":"chapters/your-first-application/create-aspnetcore-project.md","ref":"chapters/your-first-application/create-aspnetcore-project.md","articles":[]},"previous":{"title":"Consigue el SDK","level":"1.2.1","depth":2,"path":"chapters/your-first-application/get-the-sdk.md","ref":"chapters/your-first-application/get-the-sdk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/your-first-application/hello-world-in-csharp.md","mtime":"2019-03-15T21:34:11.331Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -729,10 +729,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

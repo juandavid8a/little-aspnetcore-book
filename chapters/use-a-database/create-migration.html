@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -632,19 +632,19 @@
                                 
                                 <h2 id="crear-una-migraci&#xF3;n"><a name="crear-una-migraci&#xF3;n" class="plugin-anchor" href="#crear-una-migraci&#xF3;n"><i class="fa fa-link" aria-hidden="true"></i></a>Crear una migraci&#xF3;n</h2>
 <p>Las migraciones hacen un seguimiento de los cambios en la estructura de la base de datos a lo largo del tiempo. Permiten deshacer (revertir) un conjunto de cambios o crear una segunda base de datos con la misma estructura que la primera. Con las migraciones, tiene un historial completo de modificaciones, como agregar o eliminar columnas (y tablas completas).</p>
-<p>En el cap&#xED;tulo anterior, agregaste un conjunto de &apos;Art&#xED;culos&apos; al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migraci&#xF3;n para actualizar la base de datos:</p>
-<pre><code>dotnet ef migraciones agregar AddItems
+<p>En el cap&#xED;tulo anterior, agregaste un conjunto de <code>Tareas</code> al contexto. Dado que el contexto ahora incluye un conjunto (o tabla) que no existe en la base de datos, debe crear una migraci&#xF3;n para actualizar la base de datos:</p>
+<pre><code>dotnet ef migrations add AddItems
 </code></pre><p>Esto crea una nueva migraci&#xF3;n llamada <code>AddItems</code> al examinar cualquier cambio que hayas realizado en el contexto.</p>
 <blockquote>
 <p>Si recibe un error como <code>No se ha encontrado el ejecutable que coincida con el comando&quot; dotnet-ef &quot;</code>, aseg&#xFA;rese de estar en el directorio correcto. Estos comandos deben ejecutarse desde el directorio ra&#xED;z del proyecto (donde se encuentra el archivo <code>Program.cs</code>).</p>
 </blockquote>
-<p>Si abres el directorio <code>Data / Migrations</code>, ver&#xE1;s algunos archivos:</p>
+<p>Si abres el directorio <code>Data/Migrations</code>, ver&#xE1;s algunos archivos:</p>
 <p><img src="migrations.png" alt="Migraciones m&#xFA;ltiples"></p>
-<p>El primer archivo de migraci&#xF3;n (con un nombre como <code>00_CreateIdentitySchema.cs</code>) se cre&#xF3; y se aplic&#xF3; hace mucho cuando ejecut&#xF3;<code>dotnet new</code>. La nueva migraci&#xF3;n de <code>AddItem</code> tiene el prefijo de una marca de tiempo cuando la creas.</p>
+<p>El primer archivo de migraci&#xF3;n (con un nombre como <code>00_CreateIdentitySchema.cs</code>) se cre&#xF3; y se aplic&#xF3; hace mucho cuando ejecut&#xF3; <code>dotnet new</code>. La nueva migraci&#xF3;n de <code>AddItem</code> tiene el prefijo de una marca de tiempo cuando la creas.</p>
 <blockquote>
 <p>Puede ver una lista de migraciones con <code>dotnet ef migrations list</code>.</p>
 </blockquote>
-<p>Si abre su archivo de migraci&#xF3;n, ver&#xE1; dos m&#xE9;todos llamados &apos;Arriba&apos; y `Abajo &apos;:</p>
+<p>Si abre su archivo de migraci&#xF3;n, ver&#xE1; dos m&#xE9;todos llamados <code>Up</code> y <code>Down</code>:</p>
 <p><strong>Data/Migrations/<date>_AddItems.cs</date></strong></p>
 <pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Up</span>(<span class="hljs-params">MigrationBuilder migrationBuilder</span>)
 </span>{
@@ -692,8 +692,8 @@
 </code></pre><p>Este comando har&#xE1; que Entity Framework Core cree la tabla <code>Items</code> en la base de datos.</p>
 <blockquote>
 <p>Si desea revertir la base de datos, puede proporcionar el nombre de la migraci&#xF3;n <em>anterior</em>:
-<code>dotnet ef update database CreateIdentitySchema</code>
-Esto ejecutar&#xE1; los m&#xE9;todos `Abajo &apos;de cualquier migraci&#xF3;n m&#xE1;s reciente que la migraci&#xF3;n que especifique.</p>
+<code>dotnet ef database update CreateIdentitySchema</code>
+Esto ejecutar&#xE1; los m&#xE9;todos <code>Down</code> de cualquier migraci&#xF3;n m&#xE1;s reciente que la migraci&#xF3;n que especifique.</p>
 <p>Si necesita borrar por completo la base de datos y comenzar de nuevo, ejecute <code>dotnet ef database database</code> seguido de <code>dotnet ef database update</code> para volver a armar la base de datos y llevarla a la migraci&#xF3;n actual.</p>
 </blockquote>
 <p>&#xA1;Eso es! Tanto la base de datos como el contexto est&#xE1;n listos para funcionar. A continuaci&#xF3;n, utilizar&#xE1; el contexto en su capa de servicio.</p>
@@ -740,7 +740,7 @@ Esto ejecutar&#xE1; los m&#xE9;todos `Abajo &apos;de cualquier migraci&#xF3;n m&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Crear una migración","level":"1.5.3","depth":2,"next":{"title":"Crear una nueva clase de servicio","level":"1.5.4","depth":2,"path":"chapters/use-a-database/create-service-class.md","ref":"chapters/use-a-database/create-service-class.md","articles":[]},"previous":{"title":"Actualizando el contexto","level":"1.5.2","depth":2,"path":"chapters/use-a-database/update-context.md","ref":"chapters/use-a-database/update-context.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/use-a-database/create-migration.md","mtime":"2019-03-06T18:39:32.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Crear una migración","level":"1.5.3","depth":2,"next":{"title":"Crear una nueva clase de servicio","level":"1.5.4","depth":2,"path":"chapters/use-a-database/create-service-class.md","ref":"chapters/use-a-database/create-service-class.md","articles":[]},"previous":{"title":"Actualizando el contexto","level":"1.5.2","depth":2,"path":"chapters/use-a-database/update-context.md","ref":"chapters/use-a-database/update-context.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/use-a-database/create-migration.md","mtime":"2019-03-13T15:25:55.615Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -755,10 +755,6 @@ Esto ejecutar&#xE1; los m&#xE9;todos `Abajo &apos;de cualquier migraci&#xF3;n m&
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

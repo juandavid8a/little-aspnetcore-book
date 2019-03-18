@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -631,9 +631,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="crear-una-vista"><a name="crear-una-vista" class="plugin-anchor" href="#crear-una-vista"><i class="fa fa-link" aria-hidden="true"></i></a>Crear una vista</h1>
-<p>Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y c&#xF3;digo C#. Si haz escrito p&#xE1;ginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf enJava , ya tienes la idea b&#xE1;sico)</p>
-<p>La mayor&#xED;a del c&#xF3;digo de las vistas es solo HTML , con ocasionales enunciados de C# agregados para extraer data del vista modelo que cambias a texto o HTML. Los enunciados C# es prefijados con el s&#xED;mbolo <code>@</code></p>
-<p>Las vista renderb por la acci&#xF3;n Index del &quot;&quot; necesita obtener datos en el vier mode , (una secci&#xF3;n de de todo items u mostrando en un bonita tabla para el usuario, Por convenci&#xF3;n , las vistas a con co licasl en la carpeta <em>Views</em> en un subcarperta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acci&#xF3;n a con un una extensi&#xF3;n<code>.cshtml</code>,</p>
+<p>Las vistas en ASP.NET Core se construyen usando el lenguaje de plantillas Razor, el cual combina HTML y c&#xF3;digo C#. Si haz escrito p&#xE1;ginas usan Handlebar mustaches, ERM en Ruby On Rail or Thumeleaf en Java, ya tienes la idea b&#xE1;sica)</p>
+<p>La mayor&#xED;a del c&#xF3;digo de las vistas es solo HTML, con ocasionales enunciados de C# necesarios para extraer datos del modelo de la vista y convertirlos a texto o a HTML. Los enunciados C# tienen como prefijo el s&#xED;mbolo <code>@</code></p>
+<p>La vista generada por la acci&#xF3;n <code>Index</code> del controlador <code>TodoController</code> necesita obtener los datos de la vista modelo, (una colecci&#xF3;n de tareas pendientes) y mostrarlas en un tabla atractiva para el usuario. Por convenci&#xF3;n, las vistas van colocadas en la carpeta <em>Views</em> en una subcarpeta correspondiente al nombre del controlador. El nombre del archivo es el nombre de la acci&#xF3;n con un una extensi&#xF3;n <code>.cshtml</code>.</p>
 <p>Crea una carpeta llamada <code>Todo</code> dentro la carpeta <code>Views</code>, y agrega este archivo:
 <strong>Views/Todo/Index.cshtml</strong></p>
 <pre><code class="lang-html">@model TodoViewModel
@@ -672,12 +672,12 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>En la parte superior del archivo, la directiva <code>@ model</code> le dice a Razor a qu&#xE9; modelo espera que se vincule esta vista. Se accede al modelo a trav&#xE9;s de la propiedad <code>Model</code>.</p>
-<p>Suponiendo que hay elementos de tareas pendientes en <code>Model.Items</code>, la instrucci&#xF3;n<code>foreach</code> se desplazar&#xE1; sobre cada tarea pendiente y mostrar&#xE1; una fila de la tabla \ (<code>&lt;tr&gt;</code> elemento ) que contiene el nombre y la fecha de vencimiento del elemento . Tambi&#xE9;n se representa una casilla de verificaci&#xF3;n que permitir&#xE1; al usuario marcar el elemento como completo.</p>
+<p>Suponiendo que hay elementos de tareas pendientes en <code>Model.Items</code>, la instrucci&#xF3;n<code>foreach</code> se desplazar&#xE1; sobre cada tarea pendiente y mostrar&#xE1; una fila de la tabla (elemento <code>&lt;tr&gt;</code> ) que contiene el nombre y la fecha de vencimiento de la tarea . Tambi&#xE9;n se representa una casilla de verificaci&#xF3;n que permitir&#xE1; al usuario marcar la tarea como completa.</p>
 <h2 id="el-archivo-de-dise&#xF1;o"><a name="el-archivo-de-dise&#xF1;o" class="plugin-anchor" href="#el-archivo-de-dise&#xF1;o"><i class="fa fa-link" aria-hidden="true"></i></a>El archivo de dise&#xF1;o</h2>
 <p>Quiz&#xE1;s se pregunte d&#xF3;nde est&#xE1; el resto del HTML: &#xBF;qu&#xE9; pasa con la etiqueta <code>&lt;body&gt;</code> o el encabezado y pie de p&#xE1;gina de la p&#xE1;gina? ASP.NET Core utiliza una vista de dise&#xF1;o que define la estructura base en la que se procesan todas las dem&#xE1;s vistas. Esta almacenado en <code>Views/Shared/_Layout.cshtml</code>.</p>
-<p>La plantilla default de ASP.NET Core incluye Bootstarp y JQuery e su archivo de Layout Puedes crear r&#xE1;pidamente una aplicaci&#xF3;n  web , Por supuesto que puedes usar tus propias librer&#xED;as CSS y Javascript u asi lo deseas.</p>
+<p>La plantilla predeterminada de ASP.NET Core incluye Bootstarp y JQuery en su archivo de Layout. Puedes crear r&#xE1;pidamente una aplicaci&#xF3;n web, Por supuesto que puedes usar tus propias librer&#xED;as CSS y Javascript si asi lo deseas.</p>
 <h2 id="personalizando-la-hoja-de-estilos"><a name="personalizando-la-hoja-de-estilos" class="plugin-anchor" href="#personalizando-la-hoja-de-estilos"><i class="fa fa-link" aria-hidden="true"></i></a>Personalizando la hoja de estilos</h2>
-<p>La plantilla defialt tambi&#xE9;n incluye un hoja de estilos con algunas reglas CSS b&#xE1;sicas. La hoja de estilos es almacenada en el directorio ,Agrega unas cuanta nuevas reglas CSS al final del, archivo <code>site.css</code>:</p>
+<p>La plantilla predefinida tambi&#xE9;n incluye un hoja de estilos con algunas reglas CSS b&#xE1;sicas. La hoja de estilos es almacenada en el directorio <code>wwwroot/css</code>,Agrega unas cuantas nuevas reglas CSS al final del, archivo <code>site.css</code>:</p>
 <p><strong>wwwroot/css/site.css</strong></p>
 <pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.todo-panel</span> {
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">15px</span>;
@@ -688,8 +688,8 @@
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#888</span>;
 }
 </code></pre>
-<p>Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus paginas.</p>
-<p>ASP.NET Core y Razor pueden hacer mucho mas, como vistas parciales y vistas server-rendered componentes, pero un simple Layout y na vista es todo lo que necesitaras por ahora. La documentaci&#xF3;n oficial(at <a href="https://docs.asp.net" target="_blank">https://docs.asp.net</a>) de ASP.NET coRE contiene muchos ejemplos si deseas aprender mas.</p>
+<p>Puedes usar reglas CSS como estas para personalizar como se visualizan y lucen tus p&#xE1;ginas.</p>
+<p>ASP.NET Core y Razor pueden hacer mucho m&#xE1;s, como vistas parciales y vistas generadas en el servidor componentes, pero un simple Layout y una vista es todo lo que necesitaras por ahora. La documentaci&#xF3;n oficial(en <a href="https://docs.asp.net" target="_blank">https://docs.asp.net</a> de ASP.NET Core contiene muchos ejemplos si deseas aprender m&#xE1;s.</p>
 
                                 
                                 </section>
@@ -733,7 +733,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Crear una vista","level":"1.3.3","depth":2,"next":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},"previous":{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-view.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Crear una vista","level":"1.3.3","depth":2,"next":{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},"previous":{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-view.md","mtime":"2019-03-15T18:00:22.787Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -748,10 +748,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

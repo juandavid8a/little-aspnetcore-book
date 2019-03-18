@@ -398,7 +398,7 @@
                 <a href="../add-more-features/complete-with-checkbox.html">
             
                     
-                    Actividades completadas con listas de verificación
+                    Completar las tareas con una casilla de verificación
             
                 </a>
             
@@ -631,7 +631,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="crear-un-controlador"><a name="crear-un-controlador" class="plugin-anchor" href="#crear-un-controlador"><i class="fa fa-link" aria-hidden="true"></i></a>Crear un controlador</h1>
-<p>Actualmente ya hay algunos controladores en la carpeta Controllers, incluyendo <code>HomeController</code> que renders la pantalla de bienvenida por defautl cuando visitas <code>http://localhost:5000</code>. Puedes ignorar estos controladores por ahora.</p>
+<p>Actualmente ya hay algunos controladores en la carpeta Controllers, incluyendo <code>HomeController</code> que gener&#xE1; la pantalla de bienvenida por defautl cuando visitas <code>http://localhost:5000</code>. Puedes ignorar estos controladores por ahora.</p>
 <p>Crea un nuevo controlador para la funcionalidad de la lista de tareas y agrega el siguiente c&#xF3;digo:</p>
 <p><strong>Controllers/TodoController.cs</strong></p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
@@ -648,12 +648,12 @@
     }
 }
 </code></pre>
-<p>Las rutas que son manejadas por el controlador son llamadas <strong>acciones</strong>, y son representadas por m&#xE9;todos en la clase controlador. Por ejemplo, el <code>HomeController</code> incluye tres m&#xE9;todos de accion (<code>Index</code>, <code>About</code>, y <code>Contact</code>) las cuales son mapeadas por ASP.NET Core a estas rutas URLs:</p>
+<p>Las rutas que son manejadas por el controlador son llamadas <strong>acciones</strong>, y son representadas por m&#xE9;todos en la clase controlador. Por ejemplo, el <code>HomeController</code> incluye tres m&#xE9;todos de acci&#xF3;n (<code>Index</code>, <code>About</code>, y <code>Contact</code>) las cuales son mapeadas por ASP.NET Core a estas rutas URLs:</p>
 <pre><code>localhost:5000/Home         -&gt; Index()
 localhost:5000/Home/About   -&gt; About()
 localhost:5000/Home/Contact -&gt; Contact()
-</code></pre><p>Hay un n&#xFA;mero de convenciones (patrones comunes) usados por ASP.NET Core, tales como patr&#xF3;n que <code>FooController</code> se convierte en <code>/Foo</code>, y la acci&#xF3;n <code>Index</code> puede ser omitida de la URL. Puedes personalizar este comportamiento si as&#xED; lo deseas, pero por ahora, usaremos las convenciones por definidas.</p>
-<p>Agrega un nueva acci&#xF3;n llamada <code>Index</code> al <code>TodoController</code>,remplazando el comentario <code>// Las acciones van aqu&#xED;</code>;</p>
+</code></pre><p>Hay un gran n&#xFA;mero de convenciones (patrones comunes) usados por ASP.NET Core, tales como patr&#xF3;n que <code>FooController</code> se convierte en <code>/Foo</code>, y la acci&#xF3;n <code>Index</code> puede ser omitida de la URL. Puedes personalizar este comportamiento si as&#xED; lo deseas, pero por ahora, usaremos las convenciones predefinidas.</p>
+<p>Agrega un nueva acci&#xF3;n llamada <code>Index</code> al <code>TodoController</code>, remplazando el comentario <code>// Las acciones van aqu&#xED;</code>;</p>
 <pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">TodoController</span> : <span class="hljs-title">Controller</span>
 {
     <span class="hljs-function"><span class="hljs-keyword">public</span> IActionResult <span class="hljs-title">Index</span>(<span class="hljs-params"></span>)
@@ -662,12 +662,12 @@ localhost:5000/Home/Contact -&gt; Contact()
 
         <span class="hljs-comment">// Colocar los tareas en un modelo</span>
 
-        <span class="hljs-comment">// Render la vista usando el modelo</span>
+        <span class="hljs-comment">// Genera la vista usando el modelo</span>
     }
 }
 </code></pre>
 <p>Los m&#xE9;todos de acci&#xF3;n pueden regresar vistas, datos JSON, o c&#xF3;digos de estatus HTTP como <code>200 OK</code> y <code>404 Not Found</code>.</p>
-<p>El tipo de retorno <code>IActionResult</code> te da la flexibilidad de regresar cualquiera de estos desde una acci&#xF3;n.Es una buena pr&#xE1;ctica mantener los controladores tan ligeros como sea posible. En este caso, el controlador ser&#xE1; responsable de obtener la lista de tareas desde la base de datos, poniendo estas tareas en un modelo que la vista pueda entender, y enviara la vista de regreso al navegador del usuario.</p>
+<p>El tipo de retorno <code>IActionResult</code> te da la flexibilidad de regresar cualquiera de estos desde una acci&#xF3;n. Es una buena pr&#xE1;ctica mantener los controladores tan ligeros como sea posible. En este caso, el controlador ser&#xE1; responsable de obtener la lista de tareas desde la base de datos, poniendo estas tareas en un modelo que la vista pueda entender, y enviara la vista de regreso al navegador del usuario.</p>
 <p>Antes de que puedas escribir el resto del c&#xF3;digo del controlador, necesitas crear un modelo y una vista.</p>
 
                                 
@@ -712,7 +712,7 @@ localhost:5000/Home/Contact -&gt; Contact()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Crear un controlador","level":"1.3.1","depth":2,"next":{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},"previous":{"title":"Fundamentos de MVC","level":"1.3","depth":1,"path":"chapters/mvc-basics/README.md","ref":"chapters/mvc-basics/README.md","articles":[{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"path":"chapters/mvc-basics/use-dependency-injection.md","ref":"chapters/mvc-basics/use-dependency-injection.md","articles":[]},{"title":"Terminando el controlador","level":"1.3.6","depth":2,"path":"chapters/mvc-basics/finish-controller.md","ref":"chapters/mvc-basics/finish-controller.md","articles":[]},{"title":"Actualizar la plantilla","level":"1.3.7","depth":2,"path":"chapters/mvc-basics/update-the-layout.md","ref":"chapters/mvc-basics/update-the-layout.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-controller.md","mtime":"2019-03-06T18:39:32.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T18:43:20.041Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Crear un controlador","level":"1.3.1","depth":2,"next":{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},"previous":{"title":"Fundamentos de MVC","level":"1.3","depth":1,"path":"chapters/mvc-basics/README.md","ref":"chapters/mvc-basics/README.md","articles":[{"title":"Crear un controlador","level":"1.3.1","depth":2,"path":"chapters/mvc-basics/create-controller.md","ref":"chapters/mvc-basics/create-controller.md","articles":[]},{"title":"Crear modelos","level":"1.3.2","depth":2,"path":"chapters/mvc-basics/create-models.md","ref":"chapters/mvc-basics/create-models.md","articles":[]},{"title":"Crear una vista","level":"1.3.3","depth":2,"path":"chapters/mvc-basics/create-view.md","ref":"chapters/mvc-basics/create-view.md","articles":[]},{"title":"Agregar una clase de servicio","level":"1.3.4","depth":2,"path":"chapters/mvc-basics/add-service-class.md","ref":"chapters/mvc-basics/add-service-class.md","articles":[]},{"title":"Usar inyección de dependencias","level":"1.3.5","depth":2,"path":"chapters/mvc-basics/use-dependency-injection.md","ref":"chapters/mvc-basics/use-dependency-injection.md","articles":[]},{"title":"Terminando el controlador","level":"1.3.6","depth":2,"path":"chapters/mvc-basics/finish-controller.md","ref":"chapters/mvc-basics/finish-controller.md","articles":[]},{"title":"Actualizar la plantilla","level":"1.3.7","depth":2,"path":"chapters/mvc-basics/update-the-layout.md","ref":"chapters/mvc-basics/update-the-layout.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","forkmegithub"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"forkmegithub":{"color":"green","url":"https://github.com/jahbenjah/little-aspnetcore-book"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Nate Barbettini","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Lato","paperSize":"a5","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-1-387-75615-5","variables":{},"title":"El pequeño libro de ASP.NET Core","language":"es","gitbook":"*","description":"Una introducción amigable para construir aplicaciones web con el framework ASP.NET Core."},"file":{"path":"chapters/mvc-basics/create-controller.md","mtime":"2019-03-15T21:44:45.372Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T02:21:22.273Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -727,10 +727,6 @@ localhost:5000/Home/Contact -&gt; Contact()
     
         
         <script src="../../gitbook/gitbook-plugin-forkmegithub/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
